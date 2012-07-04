@@ -8,21 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CalculatorBrain : NSObject {
-@private
+@interface CalculatorBrain : NSObject
+{
 	double operand;	
 	NSString *waitingOperation;
 	double waitingOperand;
 	BOOL waitingForOperand;
-
 	//memory functions
 	double memOperand;
-	
-	//Radian or Degree
-	BOOL radian;
 }
-
-@property BOOL radian;
 @property(readonly) double memOperand;
 @property double operand;
 @property(readonly) NSString * waitingOperation;

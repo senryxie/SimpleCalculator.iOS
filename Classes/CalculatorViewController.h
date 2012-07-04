@@ -10,16 +10,20 @@
 #import "CalculatorBrain.h"
 #include <math.h>
 
-@interface CalculatorViewController : UIViewController {
+@interface CalculatorViewController : UIViewController
+{
 	IBOutlet UILabel *display;
-	IBOutlet UILabel *displaywaitingOperation;
+	IBOutlet UILabel *displayHistoryOperation;
 	IBOutlet UILabel *displayMemory;
-	IBOutlet UILabel *displayRadorDeg;
-
-@private
-	IBOutlet CalculatorBrain *brain;
-	BOOL userIsInTheMiddleOfTypingANumber;
+    
+	BOOL        userIsInTheMiddleOfTypingANumber;
+    BOOL        canTypingNumber;
+    BOOL        canTypingOperation;
+    BOOL        isFirstEqual;
+    NSInteger   currentDisplayHistoryLength;
 }
+
+@property (nonatomic, retain)NSString           *tempDisplayNumberString;
 
 //digits or decimal points
 - (IBAction)digitPressed:(UIButton *)sender;
@@ -29,8 +33,4 @@
 
 //memory operations
 - (IBAction)memPressed:(UIButton *)sender;
-
-//Radian / Degree toggle
-- (IBAction)raddegToggle:(UIButton *)sender;
-
 @end

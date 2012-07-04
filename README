@@ -1,14 +1,4 @@
-Next steps:
-  mkdir Calculator.iOS
-  cd Calculator.iOS
-  git init
-  touch README
-  git add README
-  git commit -m 'first commit'
-  git remote add origin git@github.com:docchang/Calculator.iOS.git
-  git push origin master
-      
-Existing Git Repo?
-  cd existing_git_repo
-  git remote add origin git@github.com:docchang/Calculator.iOS.git
-  git push origin master
+Modifed from docchang/Calculator.iOS
+Thanks for docchang's sharing.
+Mine is a more simple but easy to use one, I write a label for displaying history statics, also a button for erasing numbers one by one.
+The calculator is part of a big project I'm in charging.
