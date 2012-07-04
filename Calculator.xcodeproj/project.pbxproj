@@ -193,6 +193,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Calculator_Prefix.pch;
 				INFOPLIST_FILE = "Calculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = Calculator;
 			};
 			name = Debug;
@@ -205,6 +206,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Calculator_Prefix.pch;
 				INFOPLIST_FILE = "Calculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = Calculator;
 				VALIDATE_PRODUCT = YES;
 			};
