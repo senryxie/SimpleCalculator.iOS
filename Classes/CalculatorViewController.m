@@ -55,7 +55,7 @@
         realHistoryString = [displayHistoryOperation.text substringToIndex:currentDisplayHistoryLength];
     }
     displayHistoryOperation.text = [NSString stringWithFormat:@"%@%@", realHistoryString, tempDisplayNumberString];
-    NSLog(@"updatedisplayHistory\ndisplayHistoryOperation：%@ realHistoryString:%@ tempDisplayNumberString:%@", displayHistoryOperation.text,realHistoryString,tempDisplayNumberString);
+//    NSLog(@"updatedisplayHistory\ndisplayHistoryOperation：%@ realHistoryString:%@ tempDisplayNumberString:%@", displayHistoryOperation.text,realHistoryString,tempDisplayNumberString);
 }
 
 - (void)resetData
@@ -191,11 +191,30 @@
 	}
     if ([@"<-" isEqual:operation])
     {
-		if ([tempDisplayNumberString length]>1)
+		if ([tempDisplayNumberString length]>0)
         {
-            self.tempDisplayNumberString = [tempDisplayNumberString substringToIndex:[tempDisplayNumberString length]-1];
-            display.text = tempDisplayNumberString;
-            [self updatedisplayHistory];
+            if ([tempDisplayNumberString length]==2)
+            {
+                NSString *lastTwoString = [tempDisplayNumberString substringToIndex:[tempDisplayNumberString length]-1];
+                if([@"-" isEqual:lastTwoString])
+                {
+                    self.tempDisplayNumberString = @"";
+                    display.text = tempDisplayNumberString;
+                    [self updatedisplayHistory];
+                }
+                else 
+                {
+                    self.tempDisplayNumberString = [tempDisplayNumberString substringToIndex:[tempDisplayNumberString length]-1];
+                    display.text = tempDisplayNumberString;
+                    [self updatedisplayHistory];
+                }
+            }
+            else 
+            {
+                self.tempDisplayNumberString = [tempDisplayNumberString substringToIndex:[tempDisplayNumberString length]-1];
+                display.text = tempDisplayNumberString;
+                [self updatedisplayHistory];
+            }
         }
         else
         {
